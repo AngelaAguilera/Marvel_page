@@ -1,0 +1,18 @@
+<div class="card" (click)="flip()">
+    <div class="card-inner" [ngClass]="{'card-flip':isFlipped}">
+        <div class="card-front">
+            <div class="card-image">
+                <img src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="{{comic.title}}">
+            </div>
+            <h4 class="title">
+                {{comic.title}}
+            </h4>
+        </div>
+        <div class="card-back">
+            <h3>Descrpition</h3><br>
+            <p>
+                {{ comic.description != null ? comic.description : 'Sorry, Description not available' }}
+            </p>
+        </div>
+    </div>
+</div>
