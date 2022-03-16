@@ -1,14 +1,21 @@
 <nav>
-    <div class="logo flex-center">
-        <img class="brand" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png" alt="logoMarvel">
-    </div>
-    <div class="menu">
-        <ul class="links flex-center">
-            <li [routerLink]="['/home']" [routerLinkActive]="['link-active']">Home</li>
-            <li [routerLink]="['/comics']" [routerLinkActive]="['link-active']">Comics</li>
-            <li>Heroes</li>
-            <li>Movies</li>
-        </ul>
-    </div>
+  <div class="logo flex-center">
+    <img class="brand"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png"
+      alt="logoMarvel">
+  </div>
+  <div class="menu">
+    <ul class="links" [ngClass]="toggle?'links-toggle':''">
+      <li [routerLink]="['/home']" [routerLinkActive]="['link-active']">Home</li>
+      <li [routerLink]="['/comics']" [routerLinkActive]="['link-active']">Comics</li>
+      <li>Heroes</li>
+      <li>Movies</li>
+    </ul>
+  </div>
+  <div class="burger" (click)="toggleClass()" [ngClass]="toggle?'burger-toggle':''">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
 </nav>
 <div class="banner"></div>
