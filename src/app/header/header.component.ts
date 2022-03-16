@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  toggle:boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggleClass(){
+    this.toggle = !this.toggle;
+    return this.toggle;
+  }
 }

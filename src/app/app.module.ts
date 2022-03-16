@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { CardComponent } from './card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
+import { HamburgesaDirective } from './hamburgesa.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FooterComponent } from './footer/footer.component';
     ComicsComponent,
     HomeComponent,
     CardComponent,
-    FooterComponent
+    FooterComponent,
+    HamburgesaDirective
   ],
   imports: [
     BrowserModule,
