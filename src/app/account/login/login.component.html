@@ -1,8 +1,8 @@
 <div class="card-login">
     <h1>LOGIN</h1>
-        <form  class="content-login" (submit)="getUser()">
-            <input type="text" placeholder="User">
-            <input type="password" placeholder="Password">
+        <form class="content-login" [formGroup]="loginForm" (submit)="getUser()">
+            <input type="text" placeholder="User" formControlName="user">
+            <input type="password" placeholder="Password" formControlName="password">
             <button class="btn-black" type="submit">LOG IN</button>
             <a href="">Sign up</a>
         </form>

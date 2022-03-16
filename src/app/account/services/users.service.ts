@@ -14,8 +14,8 @@ export class UsersService {
 
   url: string = 'http://localhost:3000/usersMarvel';
   
-  getUser(usuario : User): Observable<User>{
-    return this.http.get<User>(this.url+"?user="+usuario.user+"&password="+usuario.password);
+  getUser(usuario : User): Observable<User[]>{
+    return this.http.get<User[]>(this.url+"?user="+usuario.user+"&password="+usuario.password);
   }
 
 }

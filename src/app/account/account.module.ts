@@ -13,7 +13,11 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [CreateAccountComponent],
+  declarations: [
+    CreateAccountComponent,
+    LoginComponent,
+    CreateAccountComponent
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

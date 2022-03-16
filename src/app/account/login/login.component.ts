@@ -11,24 +11,35 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  private user: User;
+  userForm: User[];
   loginForm: FormGroup;
 
   constructor(
     private userService: UsersService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       user: ['', Validators.required],
       password: ['', Validators.required]
-    })
+    });
   }
 
   public getUser(): void {
     const user = this.loginForm.value;
-    this.userService.getUser(user).subscribe((res) => this.user = res);
+    if(this.loginForm.dirty){
+      this.userService.getUser(user).subscribe((res) => {
+        this.userForm = res;
+        if(this.userForm.length > 0 ){
+          this.router.navigate(["/main",'home']);
+        }else{
+          alert('The user is not valid, try again');
+          this.loginForm.reset();
+        }
+      });
+    }
   }
 
 }
