@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { ComicsComponent } from './comics/comics.component';
-import { HomeComponent } from './home/home.component';
-
+import { AccountModule } from './account/account.module';
 
 const routes: Routes = [
-  {path: '', redirectTo:'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  {path: 'comics', component:ComicsComponent}
+  {path: 'login', loadChildren: () => import("./account/account.module").then(m=>m.AccountModule)},
+  {path: 'main', loadChildren: () => import('./main/main.module').then(m => m.MainModule)}
 ];
 
 @NgModule({

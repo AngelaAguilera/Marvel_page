@@ -1,0 +1,6 @@
+{
+  "usersMarvel":[
+    {"id": 1, "user": "angie", "password": "angie123", "type": "admin", "email": "angie@mrvl.com"},
+    {"id": 2, "user": "alex", "password": "alex123", "type": "usuario", "email": "alex@mrvl.com"}
+  ]
+}

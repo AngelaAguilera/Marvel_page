@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Comic } from '../models/comic';
+import { Comic } from '../../models/comic';
 
 @Component({
   selector: 'app-card',
