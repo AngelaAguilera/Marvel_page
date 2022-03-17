@@ -1,10 +1,9 @@
 .card-login {
-    width: max-content;
+    max-width: max-content;
     height: max-content;
     flex-flow: column;
     margin: auto;
     justify-content: center;
-    align-self: center;
 }
 .card-content-login {
     margin: 10px;
@@ -18,7 +17,7 @@
         font-family: 'Montserrat';
         font-size: medium;
         height: 30px;
-        width: 300px;
+        width: auto;
         margin: 8px;
         border: 0;
         border-bottom: 2px solid red;

@@ -6,20 +6,26 @@
     box-sizing: border-box;
 }
 html, body {
-    font-family: 'Montserrat';
+    font-family: 'Montserrat';/* 
     position: absolute;
     display: block;
     width: 100%;
+    height: max-content;
+    min-width: min-content; */
     height: 100%;
-    min-width: fit-content;
-    background-image: url("assets/img/backBN.jpg");
-    background-size:contain;
+    width: 100%;
+    margin: 0;
+    background: url("assets/img/backBN.jpg") no-repeat center fixed;
+    background-size: cover;
 }
 .main-container {
     min-height: 100%;
     width: 100%;
-    clear: both;
-    margin-bottom: 100px;
+    background-color:rgba(0, 0, 0, 0.65);
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 img {
     width: 100%;
@@ -39,10 +45,10 @@ img {
     border-bottom-left-radius: 40px;
 }
 
-.body-background {
+.body-background {/* 
     position: relative;
     background-color:rgba(0, 0, 0, 0.65);
-    margin-bottom: 100px;
+    margin-bottom: 100px; */
 }
 
 .footer {
@@ -75,6 +81,7 @@ button {
 
 .container {
     padding: 20px 40px;
+    margin-bottom: 100px;
 }
 
 .card {
