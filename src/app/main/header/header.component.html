@@ -9,7 +9,7 @@
       <li [routerLink]="['/main/home']" [routerLinkActive]="['link-active']" (click)="toggleClass()">Home</li>
       <li [routerLink]="['/main/comics']" [routerLinkActive]="['link-active']" (click)="toggleClass()">Comics</li>
       <li [routerLinkActive]="['link-active']" (click)="toggleClass()">Heroes</li>
-      <li [routerLinkActive]="['link-active']" (click)="toggleClass()">Movies</li>
+      <li [routerLink]="['/main/market']" [routerLinkActive]="['link-active']" (click)="toggleClass()">Market</li>
     </ul>
   </div>
   <div class="burger" (click)="toggleClass()" [ngClass]="toggle?'burger-toggle':''">
