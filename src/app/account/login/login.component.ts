@@ -35,10 +35,12 @@ export class LoginComponent implements OnInit {
         if(this.userForm.length > 0 ){
           this.router.navigate(["/main",'home']);
         }else{
-          alert('The user is not valid, try again');
+          alert('The credentials are not valid, please try again');
           this.loginForm.reset();
         }
       });
+    } else {
+      alert('Enter credentials to sign in');
     }
   }
 

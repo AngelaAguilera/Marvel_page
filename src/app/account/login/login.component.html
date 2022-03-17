@@ -1,9 +1,23 @@
-<div class="card-login">
-    <h1>LOGIN</h1>
-        <form class="content-login" [formGroup]="loginForm" (submit)="getUser()">
-            <input type="text" placeholder="User" formControlName="user">
-            <input type="password" placeholder="Password" formControlName="password">
-            <button class="btn-black" type="submit">LOG IN</button>
-            <a href="">Sign up</a>
-        </form>
+<div class="logo-centered">
+    <img 
+  src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png"
+  alt="logoMarvel">
 </div>
+<div class="container">
+    <div  class="text-white">
+        <h1>Log in to Marvel store</h1>
+        <span>Enjoy all our products</span>
+    </div>
+    <hr>
+    <div class="card card-login">
+        <h1>LOGIN</h1>
+            <form class="card-content-login" [formGroup]="loginForm" (submit)="getUser()">
+                <input type="text" placeholder="User" formControlName="user">
+                <input type="password" placeholder="Password" formControlName="password">
+                <button class="btn-black" type="submit">SIGN IN</button>
+                <hr style="background-color: black; height: 1px;">
+                <a href="">Create an account</a>
+            </form>
+    </div>
+</div>
+
