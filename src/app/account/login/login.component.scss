@@ -1,0 +1,44 @@
+.card-login {
+    width: max-content;
+    height: max-content;
+    flex-flow: column;
+    margin: auto;
+    justify-content: center;
+    align-self: center;
+}
+.card-content-login {
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    justify-content: center;
+
+    input {
+        font-family: 'Montserrat';
+        font-size: medium;
+        height: 30px;
+        width: 300px;
+        margin: 8px;
+        border: 0;
+        border-bottom: 2px solid red;
+        outline: none;
+    }
+}
+
+.logo-centered {
+    display: flex;
+    margin: auto;
+    background-color: black;
+    justify-content: center;
+
+    img {
+        margin: 20px;
+        width: 200px;
+        height: auto;
+    }
+}
+
+a {
+    font-size: medium;
+}

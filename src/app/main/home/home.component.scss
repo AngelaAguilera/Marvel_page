@@ -1,0 +1,37 @@
+.card-home {
+    background-color: rgba(255, 255, 255, 0.884);
+    border-radius: 0 !important;
+    margin-bottom: 30px;
+    height: auto;
+    border-right: 8px solid red;  
+    border-left: 8px solid red;
+    flex-wrap: wrap;
+    justify-content: space-around !important;
+    min-width: fit-content;
+    justify-items: space;
+}
+.card-home-img {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    img {
+        max-width: 450px;
+    }
+}
+.card-home-content {
+    margin: 5px;
+    max-width: 500px;
+}
+.content-title {
+    font-size: 50px;
+    font-weight: 600;
+}
+.content-text {
+    font-size: 18px;
+}
+.btn-home {
+    width: 250px;
+}
+.card-home-bottom {
+    text-align: end;
+}
