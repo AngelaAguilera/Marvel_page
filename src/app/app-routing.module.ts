@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { AccountModule } from './account/account.module';
 
 const routes: Routes = [
+  {path:'', redirectTo:'login', pathMatch:'full'},
   {path: 'login', loadChildren: () => import("./account/account.module").then(m=>m.AccountModule)},
   {path: 'main', loadChildren: () => import('./main/main.module').then(m => m.MainModule)}
 ];
