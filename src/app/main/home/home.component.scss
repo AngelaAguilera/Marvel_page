@@ -2,7 +2,7 @@
     background-color: rgba(255, 255, 255, 0.884);
     border-radius: 0 !important;
     margin-bottom: 30px;
-    border-right: 8px solid red;  
+    border-right: 8px solid red;
     border-left: 8px solid red;
     display: flex;
     justify-content: space-around !important;
@@ -35,6 +35,14 @@
     text-align: end;
 }
 
+.btn-home {
+  font-size: 15px;
+  padding: 5px;
+}
+.btn-black {
+  height: auto;
+}
+
 @media only screen and (max-width: 512px) {
     .content-title {
         font-size: 30px;
@@ -43,12 +51,5 @@
     }
     .content-text {
         font-size: 12px;
-    }
-    .btn-home {
-        font-size: 15px;
-        padding: 5px;
-    }
-    .btn-black {
-        height: auto;
     }
 }
