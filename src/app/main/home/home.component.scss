@@ -2,13 +2,11 @@
     background-color: rgba(255, 255, 255, 0.884);
     border-radius: 0 !important;
     margin-bottom: 30px;
-    height: auto;
     border-right: 8px solid red;  
     border-left: 8px solid red;
-    flex-wrap: wrap;
+    display: flex;
     justify-content: space-around !important;
-    min-width: fit-content;
-    justify-items: space;
+    flex-wrap: wrap;
 }
 .card-home-img {
     align-items: center;
@@ -25,13 +23,32 @@
 .content-title {
     font-size: 50px;
     font-weight: 600;
+    max-width: 50%;
 }
 .content-text {
     font-size: 18px;
 }
 .btn-home {
-    width: 250px;
+    max-width: 250px;
 }
 .card-home-bottom {
     text-align: end;
+}
+
+@media only screen and (max-width: 512px) {
+    .content-title {
+        font-size: 30px;
+        font-weight: 600;
+        max-width: 50%;
+    }
+    .content-text {
+        font-size: 12px;
+    }
+    .btn-home {
+        font-size: 15px;
+        padding: 5px;
+    }
+    .btn-black {
+        height: auto;
+    }
 }
