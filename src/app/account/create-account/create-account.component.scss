@@ -1,0 +1,64 @@
+.card-account {
+    max-width: max-content;
+    height: max-content;
+    flex-flow: column;
+    margin: auto;
+    justify-content: center;
+}
+.card-content-account {
+    display: flex;
+    flex-flow: column;
+    text-align: left;
+    justify-content: center;
+
+    input {
+        font-family: 'Montserrat';
+        font-size: medium;
+        height: 30px;
+        width: 100%;
+        margin: 8px 5px;
+        border: 0;
+        border-bottom: 2px solid red;
+        outline: none;
+    }
+}
+
+.logo-centered {
+    display: flex;
+    margin: auto;
+    background-color: black;
+    justify-content: center;
+    img {
+        margin: 20px;
+        max-width: 200px;
+        height: auto;
+    }
+}
+
+a {
+    font-size: medium;
+    text-align: center;
+}
+
+.form-inline {
+    display: inline-flex;
+    text-align: justify;
+}
+label {
+    text-align: left;
+    min-width: 100%;
+    font-family: 'Montserrat';
+    font-size: medium;
+    align-self: center;
+    margin-right: 10px;
+}
+label:after { content: ": " }
+
+@media (max-width: 700px) {
+    .form-inline {
+      flex-direction: column;
+      input {
+          margin-right: 0;
+      }
+    }
+}

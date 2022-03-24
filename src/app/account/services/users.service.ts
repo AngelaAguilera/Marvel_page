@@ -18,4 +18,16 @@ export class UsersService {
     return this.http.get<User[]>(this.url+"?user="+usuario.user+"&password="+usuario.password);
   }
 
+  postUser(usuario : User): Observable<User>{
+    return this.http.post<User>(this.url, usuario);
+  }
+
+  getUserName(usuario : User): Observable<User[]>{
+    return this.http.get<User[]>(this.url+"?user="+usuario.user);
+  }
+
+  getUserEmail(usuario : User): Observable<User[]>{
+    return this.http.get<User[]>(this.url+"?email="+usuario.email);
+  }
+
 }

@@ -1,1 +1,34 @@
-<p>create-account works!</p>
+<div class="logo-centered">
+    <img 
+  src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png"
+  alt="logoMarvel">
+</div>
+<div class="container">
+    <div  class="text-white">
+        <h1>Create an account in the Marvel store</h1>
+        <span>Be part of this community and enjoy all our products</span>
+    </div>
+    <hr>
+    <div class="card card-account">
+        <h1>CREATE AN ACCOUNT</h1>
+            <form class="card-content-account" [formGroup]="accountForm" (submit)="createAccount()">
+                <div class="form-inline">
+                    <input type="text" placeholder="First Name" formControlName="firstName">
+                    <input type="text" placeholder="Last Name" formControlName="lastName">
+                    
+                </div>
+                <div class="form-inline">
+                    <input type="email" name="email" placeholder="Email" formControlName="email">
+                </div>
+                <div class="form-inline">
+                    <input type="text" placeholder="User" formControlName="user">
+                    <input type="password" placeholder="Password" formControlName="password">
+                </div>
+                
+                <button class="btn-black" type="submit">SIGN IN</button>
+                <hr style="background-color: black; height: 1px;">
+                <a [routerLink]="['/login']">I have an account</a>
+            </form>
+    </div>
+</div>
+

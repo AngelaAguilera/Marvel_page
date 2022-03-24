@@ -1,6 +1,22 @@
 {
-  "usersMarvel":[
-    {"id": 1, "user": "angie", "password": "angie123", "type": "admin", "email": "angie@mrvl.com"},
-    {"id": 2, "user": "alex", "password": "alex123", "type": "usuario", "email": "alex@mrvl.com"}
+  "usersMarvel": [
+    {
+      "id": 1,
+      "firstName": "Angela",
+      "lastName": "Aguilera",
+      "user": "angie",
+      "email": "angie@mrvl.com",
+      "password": "angie123",
+      "type": "admin"
+    },
+    {
+      "id": 2,
+      "firstName": "Alejandro",
+      "lastName": "Galvan",
+      "user": "alex",
+      "email": "alex@mrvl.com",
+      "password": "alex123",
+      "type": "user"
+    }
   ]
 }

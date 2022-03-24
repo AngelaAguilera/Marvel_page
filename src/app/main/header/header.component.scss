@@ -5,6 +5,8 @@ nav {
     display: flex;
     align-items: center;
     padding: 10px;
+    top: 0;
+    z-index: 3;
   }
 
   .brand {
@@ -39,6 +41,7 @@ nav {
   }
 
   .banner {
+    margin-top: 64.1px;
     width: 100%;
     min-height: 250px;
     background-image: url("https://www.enter.co/wp-content/uploads/2021/12/MarvelStudios.jpg");
@@ -120,4 +123,8 @@ nav {
       background-color: black;
       margin: 2px;
     }
+  }
+
+  nav {
+    position: fixed;
   }

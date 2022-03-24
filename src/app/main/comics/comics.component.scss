@@ -1,5 +1,8 @@
 .comics-list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
+    grid-gap: 20px;
+    align-content: flex-start;
     flex-wrap: wrap;
     justify-content: center;
     align-content: space-between;
