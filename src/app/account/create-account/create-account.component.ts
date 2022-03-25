@@ -46,7 +46,7 @@ export class CreateAccountComponent implements OnInit, OnExit {
             } else {
               this.userService.postUser(user).subscribe(res =>{
               console.log(res);
-              this.router.navigate(['/login']);
+              this.router.navigate(['/cart']);
               });
             }
           })
@@ -59,7 +59,7 @@ export class CreateAccountComponent implements OnInit, OnExit {
 
   //pregunta al usuario si quiere salir
   onExit() {
-    if(this.accountForm.dirty){
+    if(this.accountForm.dirty && this.accountForm.invalid){
       return confirm("Do you really want to go out without sign up?");
     }
     return true;

@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ComicsComponent } from './comics/comics.component';
 import { HomeComponent } from './home/home.component';
 import { CardComponent } from './card/card.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CardComponent } from './card/card.component';
     FooterComponent,
     ComicsComponent,
     HomeComponent,
-    CardComponent
+    CardComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,
