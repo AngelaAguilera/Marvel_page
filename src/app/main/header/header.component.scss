@@ -1,24 +1,33 @@
 nav {
     background-color: white;
     width: 100%;
-    height: auto;
     display: flex;
     align-items: center;
     padding: 10px;
     top: 0;
     z-index: 3;
+    justify-content: space-between;
+  }
+
+  .logo {
+    flex-grow: 1;
   }
 
   .brand {
     width: 100px;
   }
 
-  .links {
+  .links, .account-links {
     list-style-type: none;
     display: flex;
-    justify-content: center;
-    width: 100%;
+    width: max-content;
   }
+
+  .account-links li {
+    padding: 0 8px 0 8px;
+    cursor: pointer;
+  }
+
   .links li {
     border-right: 2px solid red;
     padding: 0 8px 0 8px;
@@ -36,9 +45,10 @@ nav {
 
   .menu {
     display: flex;
-    width: 100%;
+    flex-grow: 1;
     height: 100%;
     z-index: 2;
+    justify-content: space-between;
   }
 
   .banner {
@@ -62,7 +72,7 @@ nav {
       z-index: 2;
     }
 
-    .links {
+    .menu {
       position: fixed;
       width: 0%;
       overflow: hidden;
@@ -76,24 +86,26 @@ nav {
       transition: width ease-in-out 0.5s;
     }
 
-    .links-toggle {
+    .menu-toggle {
       width: 100%;
     }
 
-    .links li {
+    .links, .account-links {
+      flex-direction: column;
+    }
+
+    .links li, .account-links li {
       padding: 10px;
-      margin: 20px;
+      margin: 20px 0px;
       border-right: none;
       border-bottom: 2px solid red;
       width: max-content;
+      width: 100px;
+      text-align: center;
     }
 
     .links li:hover {
       background-color: rgba(255, 0, 0, 0.253);
-    }
-
-    .menu {
-      justify-content: right;
     }
 
     .burger {
@@ -101,7 +113,6 @@ nav {
       flex-flow: column;
       z-index: 2;
     }
-
 
     .burger-toggle {
 
