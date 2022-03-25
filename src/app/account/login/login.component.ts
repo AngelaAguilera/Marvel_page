@@ -11,7 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  userForm: User[];
+  usersLogin: User[];
   loginForm: FormGroup;
 
   constructor(
@@ -29,10 +29,14 @@ export class LoginComponent implements OnInit {
 
   public getUser(): void {
     const user = this.loginForm.value;
-    if(this.loginForm.dirty){
+    if(this.loginForm.valid){
       this.userService.getUser(user).subscribe((res) => {
-        this.userForm = res;
-        if(this.userForm.length > 0 ){
+        this.usersLogin = res;
+        if(this.usersLogin.length > 0 ){
+          //crear almacenamiento en localStorage
+          localStorage.removeItem('type');
+          localStorage.setItem('type', this.usersLogin[0].type);
+          //Fin almacenamiento en localStorage
           this.router.navigate(["/main",'home']);
         }else{
           alert('The credentials are not valid, please try again');

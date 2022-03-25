@@ -2,17 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../services/users.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
-import { stringify } from 'querystring';
-import { RESOURCE_CACHE_PROVIDER } from '@angular/platform-browser-dynamic';
 import { User } from 'src/app/models/user';
+import { OnExit } from 'src/app/guards/go-out-page.guard';
 
 @Component({
   selector: 'app-create-account',
   templateUrl: './create-account.component.html',
   styleUrls: ['./create-account.component.scss']
 })
-export class CreateAccountComponent implements OnInit {
+export class CreateAccountComponent implements OnInit, OnExit {
 
   accountForm: FormGroup;
   respuesta: string = '';
@@ -59,8 +57,12 @@ export class CreateAccountComponent implements OnInit {
     }
   }
 
-  public validAccount(user : User): void{
-    
+  //pregunta al usuario si quiere salir
+  onExit() {
+    if(this.accountForm.dirty){
+      return confirm("Do you really want to go out without sign up?");
+    }
+    return true;
   }
 
 }

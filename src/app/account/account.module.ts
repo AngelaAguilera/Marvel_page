@@ -6,10 +6,11 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GoOutPageGuard } from '../guards/go-out-page.guard';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
-  {path:'createAccount', component: CreateAccountComponent}
+  {path:'createAccount', component: CreateAccountComponent, canDeactivate:[GoOutPageGuard]}
 ]
 
 @NgModule({

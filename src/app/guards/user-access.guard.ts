@@ -10,11 +10,11 @@ export class UserAccessGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     
-      if(localStorage.getItem('acceso') == 'true'){
+      if(localStorage.getItem('type') == 'user'){
         return true;
       }
       else{
-        alert("No es posible acceder!");
+        alert("It is not possible to access");
         return false;
       }
   }
