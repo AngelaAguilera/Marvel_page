@@ -1,0 +1,62 @@
+<div class="card" *ngIf="comicDetail">
+  <div class="grid-container">
+    <div class="image">
+      <img
+        src="{{ comicDetail.thumbnail.path }}.{{
+          comicDetail.thumbnail.extension
+        }}"
+        alt="{{ comicDetail.title }}"
+      />
+    </div>
+    <div class="title">
+      <h1>{{ comicDetail.title }}</h1>
+    </div>
+    <div class="description">
+      <h3>Description</h3>
+      <hr />
+      <p class="content">
+        {{
+          comicDetail.description != null
+            ? comicDetail.description
+            : "Sorry, description not available"
+        }}
+      </p>
+    </div>
+    <div class="authors">
+      <h3>Creators</h3>
+      <hr />
+      <p class="content">
+        <span *ngFor="let item of comicDetail.creators.items">
+          <h5>
+            {{ item.role | uppercase }}
+            <span class="author">
+              {{ item.name }}
+            </span>
+          </h5>
+        </span>
+      </p>
+    </div>
+    <div class="price">
+      <h3>Add to cart</h3>
+      <hr />
+      <div class="content">
+        <span>
+        <h5>
+          PRICE:
+          <span class="cost">{{ comicDetail.prices[0].price | currency }}</span>
+        </h5>
+      </span>
+      <div class="form-inline">
+        <label for="quantity"><h5>QUANTITY:</h5></label>
+        <input type="number" value="1" max="10" min="1" name="quantity" />
+      </div>
+      </div>
+      
+      <button class="btn-black">
+        <span class="material-icons" >
+          shopping_cart
+        </span>
+      </button>
+    </div>
+  </div>
+</div>

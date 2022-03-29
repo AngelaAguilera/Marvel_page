@@ -1,8 +1,16 @@
 <div class="card card-comic" (click)="flip()">
-  <div>
-    <img class="image-rounded" src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="{{comic.title}}">
-  </div>
-  <h4 class="title">
-    {{comic.title}}
-  </h4>
+  <a routerLink="detail/{{ comic.id }}"
+    ><div>
+      <img
+        class="image-rounded"
+        src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}"
+        alt="{{ comic.title }}"
+      />
+    </div>
+    <div>
+      <h4 class="title">
+        {{ comic.title }}
+      </h4>
+    </div>
+  </a>
 </div>

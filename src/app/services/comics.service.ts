@@ -12,11 +12,15 @@ export class ComicsService {
   hash = 'fc239fd6705a38c5c435c54094f36fe5';
   ts ='2022';
   urlApiComics = `https://gateway.marvel.com:443/v1/public/comics?format=comic&formatType=comic`;
+  urlApiComicDetail = `https://gateway.marvel.com:443/v1/public/comics/`;
   urlCredentials = `&apikey=${this.publickey}&ts=${this.ts}&hash=${this.hash}`;
   urlFilters: string;
 
   constructor(private http: HttpClient) { }
 
+  getComic(id: number): Observable<Data>{
+    return this.http.get<Data>(this.urlApiComicDetail+id+"?"+this.urlCredentials);
+  }
   getComics(): Observable<Data>{
     return this.http.get<Data>(this.urlApiComics+'&startYear=2021'+this.urlCredentials);
   }

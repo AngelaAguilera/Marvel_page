@@ -4,28 +4,39 @@
 </div>
 <hr />
 <div class="card">
-  <div class="form-inline">
-    <h3>FILTERS</h3>
-  </div>
+  <h3>FILTERS</h3>
   <form [formGroup]="comicsForm" (submit)="getComicsFilter()">
     <div class="form-inline">
-      <label for="options">Year</label>
-      <input type="text" (keypress)="($event.charCode >= 48 && $event.charCode <= 57)" maxLength="4" formControlName="year">
+      <label for="options" class="float-left">Year</label>
+      <input
+        type="text"
+        class="float-right"
+        (keypress)="($event.charCode >= 48 && $event.charCode <= 57)"
+        maxLength="4"
+        formControlName="year"
+      />
+    </div>
+    <div class="form-inline">
       <label for="options">Date range</label>
       <select name="options" formControlName="dateRange">
         <option [ngValue]="" disabled></option>
-        <option *ngFor="let date of dateRanges" [ngValue]="date.id">{{date.name}}</option>
+        <option *ngFor="let date of dateRanges" [ngValue]="date.id">
+          {{ date.name }}
+        </option>
       </select>
+    </div>
+    <div class="form-inline">
       <label for="title">Title</label>
       <input type="text" name="title" formControlName="title" />
-    
+    </div>
     <button class="btn-black" type="submit">
       <span class="material-icons"> search </span>
     </button>
-</div>
   </form>
 </div>
 <br /><br />
 <div class="comics-list">
-  <app-card *ngFor="let comic of comics" [comic]="comic"></app-card>
+  <app-card *ngFor="let comic of comics" [comic]="comic">
+    <a href=""><h1>name</h1></a>
+  </app-card>
 </div>

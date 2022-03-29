@@ -1,0 +1,89 @@
+.card {
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.884);
+  font-size: medium;
+  text-align: left;
+}
+img {
+  max-width: 300px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 25% auto 15%;
+  gap: 20px;
+  width: 100%;
+}
+.grid-container > div {
+  width: 100%;
+}
+.image {
+  grid-column: 1 / 2;
+  grid-row: 1 / 7;
+  text-align: center;
+}
+.title {
+  grid-column: 2 / 4;
+}
+.description {
+  grid-column: 2 / 3;
+  grid-row: 2 / 5;
+}
+.authors {
+  grid-column: 2 / 3;
+  grid-row: 5 / 7;
+}
+.price {
+  grid-column: 3 / 4;
+  grid-row: 2 / 5;
+
+  display: flex;
+  flex-direction: column;
+}
+
+hr {
+  background-color: red;
+  padding: 0;
+  margin: 6px 0 ;
+  height: 2px;
+  border: 0 none;
+}
+
+.content {
+  font-size: 15px;
+  margin: 10px !important;
+}
+
+.author {
+  margin-left: 10px;
+  font-size: small;
+  font-weight: 400;
+}
+
+.cost {
+  margin-left: 5px;
+  font-weight: 400;
+}
+
+input {
+  width: 50px;
+}
+label {
+  font-weight: 500;
+  font-family: 'Montserrat';
+  font-size: medium;
+  align-self: center;
+  min-width: 100px;
+}
+.form-inline {
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 800px) {
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .title {
+        order: -1;
+    }
+}
