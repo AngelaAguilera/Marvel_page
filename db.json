@@ -17,6 +17,15 @@
       "email": "alex@mrvl.com",
       "password": "alex123",
       "type": "user"
+    },
+    {
+      "firstName": "Mike",
+      "lastName": "Acosta",
+      "email": "mike@gmail.com",
+      "user": "mike",
+      "password": "mike123",
+      "type": "user",
+      "id": 3
     }
   ]
 }

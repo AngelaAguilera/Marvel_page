@@ -129,6 +129,22 @@ hr {
   }
 }
 
+input, select {
+  font-family: 'Montserrat';
+  font-size: medium;
+  height: 30px;
+  width: 100%;
+  margin: 8px 5px;
+  border: 0;
+  border-bottom: 2px solid red;
+  outline: none;
+}
+
+.form-inline {
+  display: inline-flex;
+  text-align: justify;
+}
+
 /*************************************************************************************************/
 /*start CARD FLIP*/
 .card-comic {

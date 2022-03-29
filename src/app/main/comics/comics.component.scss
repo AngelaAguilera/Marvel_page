@@ -3,3 +3,40 @@
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 20px;
 }
+
+.card {
+    padding: 10px;
+    justify-content: space-between;
+    align-items:initial;
+    text-align: justify;
+}
+
+h3 {
+    align-self: center;
+}
+
+label {
+    font-weight: 500;
+    font-family: 'Montserrat';
+    font-size: medium;
+    width: 100%;
+    align-self: center;
+    text-align: end;
+}
+
+input {
+    width: 100%;
+}
+
+.float-right {
+    float: left;
+}
+.float-left {
+    float: right;
+}
+
+button {
+    margin: 0 20px;
+    padding: 0 5px;
+
+}

@@ -9,6 +9,7 @@ import { ComicsComponent } from './comics/comics.component';
 import { HomeComponent } from './home/home.component';
 import { CardComponent } from './card/card.component';
 import { CartComponent } from './cart/cart.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { CartComponent } from './cart/cart.component';
   ],
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class MainModule { }

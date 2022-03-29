@@ -46,7 +46,7 @@ export class CreateAccountComponent implements OnInit, OnExit {
             } else {
               this.userService.postUser(user).subscribe(res =>{
               console.log(res);
-              this.router.navigate(['/cart']);
+              this.router.navigate(['/main/cart']);
               });
             }
           })
