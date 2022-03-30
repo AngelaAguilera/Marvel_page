@@ -1,0 +1,29 @@
+.funkos-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: space-between;
+}
+h3 {
+  align-self: center;
+}
+label {
+  font-weight: 500;
+  font-family: 'Montserrat';
+  font-size: medium;
+  align-self: center;
+  min-width: 100px;
+}
+input, select {
+  max-width: 150px;
+}
+button {
+  margin: 0 20px;
+  padding: 0 5px;
+  align-self: flex-end;
+}

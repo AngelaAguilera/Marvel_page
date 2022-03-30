@@ -8,15 +8,9 @@ import { Comic } from '../../models/comic';
 })
 export class CardComponent implements OnInit {
   @Input() comic: Comic;
-  isFlipped = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  flip(): void {
-    this.isFlipped = !this.isFlipped;
-  }
-
 }

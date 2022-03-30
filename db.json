@@ -27,5 +27,55 @@
       "type": "user",
       "id": 3
     }
+  ],
+  "funkos": [
+    {
+      "id": 1,
+      "name": "Deadpool",
+      "price": 20,
+      "image": "https://http2.mlstatic.com/D_NQ_NP_804886-MLC45721531798_042021-V.webp"
+    },
+    {
+      "id": 2,
+      "name": "Loki",
+      "price": 32,
+      "image": "https://http2.mlstatic.com/D_NQ_NP_688727-MLC48718390520_122021-V.webp"
+    },
+    {
+      "id": 3,
+      "name": "Venom",
+      "price": 34,
+      "image": "https://http2.mlstatic.com/D_NQ_NP_935509-MLC46956731073_082021-V.webp"
+    },
+    {
+      "id": 4,
+      "name": "Miles Morales",
+      "price": 27,
+      "image": "https://http2.mlstatic.com/D_NQ_NP_962909-MLC47117545411_082021-V.webp"
+    },
+    {
+      "id": 5,
+      "name": "Logan",
+      "price": 31,
+      "image": "https://http2.mlstatic.com/D_NQ_NP_903470-MLC48505851559_122021-V.webp"
+    },
+    {
+      "id": 6,
+      "name": "Wanda",
+      "price": 29,
+      "image": "https://http2.mlstatic.com/D_NQ_NP_779157-MLC48241375287_112021-V.webp"
+    },
+    {
+      "id": 7,
+      "name": "groot",
+      "price": 29,
+      "image": "https://http2.mlstatic.com/D_NQ_NP_814258-MLC45331160382_032021-V.webp"
+    },
+    {
+      "id": 7,
+      "name": "groot",
+      "price": 29,
+      "image": "https://http2.mlstatic.com/D_NQ_NP_688727-MLC48718390520_122021-V.webp"
+    }
   ]
 }
