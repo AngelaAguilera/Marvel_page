@@ -12,16 +12,23 @@
     </ul>
     <ul class="account-links">
       <li>
-        <span class="material-icons" [routerLink]="['/main/cart']" >
+        <span title="Shopping cart" class="material-icons" [routerLink]="['/main/cart']">
           shopping_cart
         </span>
       </li>
       <li>
-        <span class="material-icons">
-          person
-        </span>
+        <div *ngIf="isLogged; else login">
+          <span title="Logout" (click)="logout()" class="material-icons">
+            logout
+          </span>
+        </div>
+        <ng-template #login>
+          <span title="Login" [routerLink]="['/login']" class="material-icons" #login>
+            login
+          </span>
+        </ng-template>
       </li>
-      
+
     </ul>
   </div>
   <div class="burger" (click)="toggleClass()" [ngClass]="toggle?'burger-toggle':''">

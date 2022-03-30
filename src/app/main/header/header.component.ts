@@ -6,14 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  toggle:boolean = false;
+  toggle: boolean = false;
+  isLogged: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.logged();
   }
 
-  toggleClass(){
+  logout(): void {
+    localStorage.clear();
+    this.logged();
+  }
+
+  private logged(): void {
+    this.isLogged = localStorage.length > 0;
+  }
+
+  toggleClass() {
     this.toggle = !this.toggle;
     return this.toggle;
   }
