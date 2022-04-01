@@ -2,8 +2,15 @@
     <h1>
         CART
     </h1>
-    <span>
-        Welcome to shopping page!
-    </span>
+    <div class="card product" *ngFor="let product of products">
+      <div>
+        <img src="{{product.image}}" alt="">
+      </div>
+      <div class="details">
+        <p><b>{{product.name}}</b></p>
+        <p> <b>Quantity:</b> {{product.quantity}}</p>
+        <p><b>Price:</b> {{product.price | currency}}</p>
+      </div>
+    </div>
 </div>
 <hr>

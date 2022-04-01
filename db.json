@@ -78,5 +78,16 @@
       "image": "https://http2.mlstatic.com/D_NQ_NP_814258-MLC45331160382_032021-V.webp",
       "description": ""
     }
+  ],
+  "cart": [
+    {
+      "userId": 2,
+      "productId": 1,
+      "name":"Deadpool",
+      "type": "funko",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_804886-MLC45721531798_042021-V.webp",
+      "quantity": 1,
+      "price":20
+    }
   ]
 }
