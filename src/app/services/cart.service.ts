@@ -12,7 +12,9 @@ export class CartService {
     private http:HttpClient
   ) { }
 
-  addProduct() {
+  addProduct(product: CartProducts):Observable<boolean> {
+    const products = this.http.post<any>(`http://localhost:3000/cart`,product);
+    return products;
   }
 
   getProducts(userId:string):Observable<CartProducts[]> {

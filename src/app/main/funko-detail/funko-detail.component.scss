@@ -43,7 +43,7 @@ img {
 hr {
   background-color: red;
   padding: 0;
-  margin: 6px 0 ;
+  margin: 6px 0;
   height: 2px;
   border: 0 none;
 }
@@ -69,21 +69,78 @@ input {
 }
 label {
   font-weight: 500;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-size: medium;
   align-self: center;
   min-width: 100px;
 }
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.form span {
+  border: none;
+  width: 5vh;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form button {
+  background-color: orangered;
+  border-radius: 6px;
+  color: white;
+  border: none;
+  width: 5vh;
+  height: 5vh;
+}
+
+.form button:hover {
+  background-color: rgb(211, 211, 8);
+}
+
 .form-inline {
   flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 800px) {
-    .grid-container {
-        display: flex;
-        flex-direction: column;
-    }
-    .title {
-        order: -1;
-    }
+  .form {
+    width: max-content;
+    margin: 0;
+  }
+
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    order: -1;
+  }
+}
+
+.card.modal {
+  display: block !important;
+  position: fixed;
+  top: 10vh;
+  right: 0;
+  z-index: 5;
+  background-color: rgb(255, 234, 1);
+  width: 300px;
+  margin: 5px;
+  opacity: 0%;
+  transition: opacity .5s;
+}
+
+/* .modal {
+  display: none;
+} */
+
+.modal-show {
+  opacity: 100% !important;
 }

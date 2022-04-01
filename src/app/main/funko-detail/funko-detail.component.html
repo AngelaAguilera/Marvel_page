@@ -20,18 +20,6 @@
         }}
       </p>
     </div>
-    <div class="authors">
-      <p class="content">
-        <span *ngFor="let item of funkoDetail.name">
-          <h5>
-            {{ item.role | uppercase }}
-            <span class="author">
-              {{ item.name }}
-            </span>
-          </h5>
-        </span>
-      </p>
-    </div>
     <div class="price">
       <h3>Add to cart</h3>
       <hr />
@@ -44,15 +32,22 @@
       </span>
       <div class="form-inline">
         <label for="quantity"><h5>QUANTITY:</h5></label>
-        <input type="number" value="1" max="10" min="1" name="quantity" />
+        <div class="form">
+          <button (click)="onDecrement()">-</button>
+          <span>{{quantity}}</span>
+          <button (click)="onIncrement()">+</button>
+        </div>
       </div>
       </div>
-
-      <button class="btn-black">
+      <button class="btn-black" (click)="addToCart()">
         <span class="material-icons" >
           shopping_cart
         </span>
       </button>
     </div>
   </div>
+</div>
+
+<div class="card modal" [ngClass]="showModal? 'modal-show':''">
+  <p>Producto agregado al carrito</p>
 </div>
