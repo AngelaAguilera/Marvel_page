@@ -2,6 +2,7 @@
   justify-content: space-between;
   height: 20vh;
   flex-wrap: wrap;
+  margin-top: 5vh;
 }
 
 .details {
@@ -9,13 +10,15 @@
   flex-grow: 1;
   margin: 0 0 0 10%;
   justify-content: space-between;
+  height: 15vh;
+  align-items: center;
 }
 
 .product img {
   max-width: 20vh;
 }
 
-@media only screen and (max-width: 460px) {
+@media only screen and (max-width: 490px) {
   .product {
     height: max-content;
     justify-content: center;
@@ -25,7 +28,6 @@
     flex-direction: column;
     min-width: max-content;
     align-items: center;
-    height: 15vh;
     justify-content: space-evenly;
   }
 }
