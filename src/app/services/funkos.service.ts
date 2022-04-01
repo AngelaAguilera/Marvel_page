@@ -10,8 +10,8 @@ export class FunkosService {
 
   constructor(private http: HttpClient) { }
 
-  getFunkos(): Observable<Funko[]> {
-    const result = this.http.get<Funko[]>("http://localhost:3000/funkos");
+  getFunkos(query:string = ''): Observable<Funko[]> {
+    const result = this.http.get<Funko[]>(`http://localhost:3000/funkos?${query}`);
     return result;
   }
 

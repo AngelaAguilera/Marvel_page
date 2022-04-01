@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DetailComponent } from './detail/detail.component';
 import { FunkosComponent } from './funkos/funkos.component';
 import { FunkoCardComponent } from './funko-card/funko-card.component';
+import { FunkoDetailComponent } from './funko-detail/funko-detail.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FunkoCardComponent } from './funko-card/funko-card.component';
     CartComponent,
     DetailComponent,
     FunkosComponent,
-    FunkoCardComponent
+    FunkoCardComponent,
+    FunkoDetailComponent
   ],
   imports: [
     CommonModule,

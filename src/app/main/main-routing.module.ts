@@ -1,3 +1,4 @@
+import { FunkoDetailComponent } from './funko-detail/funko-detail.component';
 import { FunkosComponent } from './funkos/funkos.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -14,7 +15,7 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'comics', component: ComicsComponent },
     { path: 'funkos', component: FunkosComponent },
-    { path: 'funkos/detail/:id', component: DetailComponent},
+    { path: 'funkos/detail/:id', component: FunkoDetailComponent},
     { path: 'comics/detail/:id', component: DetailComponent},
     { path: 'cart', component: CartComponent, canActivate:[UserAccessGuard]}
    ] },
