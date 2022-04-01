@@ -19,7 +19,8 @@ export class CartComponent implements OnInit {
   }
 
   getProducts() {
-    this.cartService.getProducts().subscribe(response => this.products = response);
+    const userId = localStorage.getItem("userId");
+    this.cartService.getProducts(userId).subscribe(response => this.products = response);
   }
 
 }

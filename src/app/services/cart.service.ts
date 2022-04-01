@@ -15,8 +15,8 @@ export class CartService {
   addProduct() {
   }
 
-  getProducts():Observable<CartProducts[]> {
-    const products = this.http.get<CartProducts[]>("http://localhost:3000/cart");
+  getProducts(userId:string):Observable<CartProducts[]> {
+    const products = this.http.get<CartProducts[]>(`http://localhost:3000/cart?userId=${userId}`);
     return products;
   }
 }
