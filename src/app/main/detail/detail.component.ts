@@ -1,9 +1,12 @@
+import { EmailService } from './../../services/email.service';
+import { Thumbnail } from './../../models/comic';
 import { CartProducts } from './../../models/cartProducts';
 import { CartService } from './../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { ComicsService } from 'src/app/services/comics.service';
 import { ActivatedRoute } from '@angular/router';
 import { Comic } from 'src/app/models/comic';
+import { createMail } from 'src/app/lib/createMail';
 
 @Component({
   selector: 'app-detail',
@@ -19,7 +22,8 @@ export class DetailComponent implements OnInit {
   constructor(
     private cartService: CartService,
     private comicsService: ComicsService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private emailService:EmailService
   ) { }
 
   ngOnInit(): void {
@@ -28,6 +32,15 @@ export class DetailComponent implements OnInit {
 
   public addToCart() {
     const userId = localStorage.getItem("userId");
+    const emailClient = createMail({
+      name:this.comicDetail.title,
+      image:this.comicDetail.thumbnail.path+"."+this.comicDetail.thumbnail.extension
+    });
+
+    this.emailService.sendEmail(
+      emailClient
+    ).subscribe(res => { console.log(res) });
+
     const product: CartProducts = {
       id: Date.now()+"",
       userId: Number(userId),

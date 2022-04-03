@@ -1,9 +1,12 @@
+import { Email } from './../../models/email';
+import { EmailService } from './../../services/email.service';
 import { CartProducts } from './../../models/cartProducts';
 import { CartService } from './../../services/cart.service';
 import { Funko } from 'src/app/models/funkos';
 import { ActivatedRoute } from '@angular/router';
 import { FunkosService } from './../../services/funkos.service';
 import { Component, OnInit } from '@angular/core';
+import { createMail } from 'src/app/lib/createMail';
 @Component({
   selector: 'app-funko-detail',
   templateUrl: './funko-detail.component.html',
@@ -18,7 +21,8 @@ export class FunkoDetailComponent implements OnInit {
   constructor(
     private comicsService: FunkosService,
     private cartService: CartService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private emailService: EmailService
   ) { }
 
   ngOnInit(): void {
@@ -27,8 +31,10 @@ export class FunkoDetailComponent implements OnInit {
 
   public addToCart() {
     const userId = localStorage.getItem("userId");
+    const emailClient = createMail({name:this.funkoDetail.name,image:this.funkoDetail.image});
+
     const product: CartProducts = {
-      id: Date.now()+"",
+      id: Date.now() + "",
       userId: Number(userId),
       productId: this.funkoDetail.id,
       image: this.funkoDetail.image,
@@ -43,6 +49,9 @@ export class FunkoDetailComponent implements OnInit {
         this.showModal = false;
       }, 2000);
     });
+    this.emailService.sendEmail(
+      emailClient
+    ).subscribe(res => { console.log(res) });
   }
 
   public getFunko(): void {
@@ -53,13 +62,13 @@ export class FunkoDetailComponent implements OnInit {
   }
 
   public onDecrement() {
-    if (this.quantity > 1){
+    if (this.quantity > 1) {
       --this.quantity;
     }
   }
 
   public onIncrement() {
-    if (this.quantity < 10){
+    if (this.quantity < 10) {
       ++this.quantity;
     }
   }

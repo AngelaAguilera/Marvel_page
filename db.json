@@ -14,7 +14,7 @@
       "firstName": "Alejandro",
       "lastName": "Galvan",
       "user": "alex",
-      "email": "alex@mrvl.com",
+      "email": "kleon0313@gmail.com",
       "password": "alex123",
       "type": "user"
     },
@@ -88,6 +88,16 @@
       "image": "https://http2.mlstatic.com/D_NQ_NP_804886-MLC45721531798_042021-V.webp",
       "quantity": 1,
       "price": 20
+    },
+    {
+      "id": "1648964574313",
+      "userId": 2,
+      "productId": 3,
+      "image": "https://http2.mlstatic.com/D_NQ_NP_935509-MLC46956731073_082021-V.webp",
+      "price": 34,
+      "quantity": 1,
+      "type": "funko",
+      "name": "Venom"
     }
   ]
 }

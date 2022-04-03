@@ -36,7 +36,9 @@ export class LoginComponent implements OnInit {
           //crear almacenamiento en localStorage
           localStorage.removeItem('type');
           localStorage.setItem('type', this.usersLogin[0].type);
+          localStorage.setItem('name', (this.usersLogin[0].firstName).toString());
           localStorage.setItem('userId', (this.usersLogin[0].id).toString());
+          localStorage.setItem('email', (this.usersLogin[0].email).toString());
           //Fin almacenamiento en localStorage
           this.router.navigate(["/main",'cart']);
         }else{
