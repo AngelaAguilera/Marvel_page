@@ -12,6 +12,11 @@
     </ul>
     <ul class="account-links">
       <li>
+        <div>
+          <span class="username">{{userName}}</span>
+        </div>
+      </li>
+      <li>
         <span title="Shopping cart" class="material-icons" [routerLink]="['/main/cart']">
           shopping_cart
         </span>
@@ -28,7 +33,6 @@
           </span>
         </ng-template>
       </li>
-
     </ul>
   </div>
   <div class="burger" (click)="toggleClass()" [ngClass]="toggle?'burger-toggle':''">

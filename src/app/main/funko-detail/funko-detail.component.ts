@@ -6,7 +6,7 @@ import { Funko } from 'src/app/models/funkos';
 import { ActivatedRoute } from '@angular/router';
 import { FunkosService } from './../../services/funkos.service';
 import { Component, OnInit } from '@angular/core';
-import { createMail } from 'src/app/lib/createMail';
+import { createMailBuy, createMailAddToCart } from 'src/app/lib/createMail';
 @Component({
   selector: 'app-funko-detail',
   templateUrl: './funko-detail.component.html',
@@ -17,6 +17,7 @@ export class FunkoDetailComponent implements OnInit {
   funkoDetail?: Funko;
   quantity: number = 1;
   showModal = false;
+  showModalBuy = false;
 
   constructor(
     private comicsService: FunkosService,
@@ -31,7 +32,7 @@ export class FunkoDetailComponent implements OnInit {
 
   public addToCart() {
     const userId = localStorage.getItem("userId");
-    const emailClient = createMail({name:this.funkoDetail.name,image:this.funkoDetail.image});
+    const emailClient = createMailAddToCart({ name: this.funkoDetail.name, image: this.funkoDetail.image });
 
     const product: CartProducts = {
       id: Date.now() + "",
@@ -73,4 +74,12 @@ export class FunkoDetailComponent implements OnInit {
     }
   }
 
+  public buy() {
+    const emailClient = createMailBuy({ name: this.funkoDetail.name, image: this.funkoDetail.image });
+    this.emailService.sendEmail(emailClient).subscribe(res => {});
+    this.showModalBuy = true;
+    setTimeout(() => {
+      this.showModalBuy = false;
+    }, 2000);
+  }
 }

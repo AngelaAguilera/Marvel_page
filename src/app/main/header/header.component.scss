@@ -17,6 +17,10 @@ nav {
     width: 100px;
   }
 
+  .username {
+    font-size: .8em;
+  }
+
   .links, .account-links {
     list-style-type: none;
     display: flex;
@@ -32,6 +36,7 @@ nav {
     border-right: 2px solid red;
     padding: 0 8px 0 8px;
     cursor: pointer;
+    font-size: 1em;
   }
   .links li a {
     text-decoration: none;

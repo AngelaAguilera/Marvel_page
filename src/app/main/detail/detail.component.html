@@ -61,6 +61,9 @@
           shopping_cart
         </span>
       </button>
+      <button class="btn-buy" (click)="buy()">
+        Buy now
+      </button>
     </div>
   </div>
 </div>
@@ -69,3 +72,6 @@
   <p>Producto agregado al carrito</p>
 </div>
 
+<div class="card modal" [ngClass]="showModalBuy? 'modal-show':''">
+  <p>Thanks for your purchase</p>
+</div>

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { ComicsService } from 'src/app/services/comics.service';
 import { ActivatedRoute } from '@angular/router';
 import { Comic } from 'src/app/models/comic';
-import { createMail } from 'src/app/lib/createMail';
+import { createMailAddToCart, createMailBuy } from 'src/app/lib/createMail';
 
 @Component({
   selector: 'app-detail',
@@ -18,12 +18,13 @@ export class DetailComponent implements OnInit {
   comicDetail?: Comic;
   quantity: number = 1;
   showModal = false;
+  showModalBuy = false;
 
   constructor(
     private cartService: CartService,
     private comicsService: ComicsService,
     private activatedRoute: ActivatedRoute,
-    private emailService:EmailService
+    private emailService: EmailService
   ) { }
 
   ngOnInit(): void {
@@ -32,9 +33,9 @@ export class DetailComponent implements OnInit {
 
   public addToCart() {
     const userId = localStorage.getItem("userId");
-    const emailClient = createMail({
-      name:this.comicDetail.title,
-      image:this.comicDetail.thumbnail.path+"."+this.comicDetail.thumbnail.extension
+    const emailClient = createMailAddToCart({
+      name: this.comicDetail.title,
+      image: this.comicDetail.thumbnail.path + "." + this.comicDetail.thumbnail.extension
     });
 
     this.emailService.sendEmail(
@@ -42,10 +43,10 @@ export class DetailComponent implements OnInit {
     ).subscribe(res => { console.log(res) });
 
     const product: CartProducts = {
-      id: Date.now()+"",
+      id: Date.now() + "",
       userId: Number(userId),
       productId: this.comicDetail.id,
-      image: this.comicDetail.thumbnail.path+"."+this.comicDetail.thumbnail.extension,
+      image: this.comicDetail.thumbnail.path + "." + this.comicDetail.thumbnail.extension,
       price: this.comicDetail.prices[0].price,
       quantity: this.quantity,
       type: "funko",
@@ -59,7 +60,7 @@ export class DetailComponent implements OnInit {
     });
   }
 
-  public getComic(): void{
+  public getComic(): void {
     const id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
     this.comicsService.getComic(id).subscribe(response => {
       this.comicDetail = response.data.results[0];
@@ -69,15 +70,27 @@ export class DetailComponent implements OnInit {
   }
 
   public onDecrement() {
-    if (this.quantity > 1){
+    if (this.quantity > 1) {
       --this.quantity;
     }
   }
 
   public onIncrement() {
-    if (this.quantity < 10){
+    if (this.quantity < 10) {
       ++this.quantity;
     }
+  }
+
+  public buy() {
+    const emailClient = createMailAddToCart({
+      name: this.comicDetail.title,
+      image: this.comicDetail.thumbnail.path + "." + this.comicDetail.thumbnail.extension
+    });
+    this.emailService.sendEmail(emailClient).subscribe(res => { });
+    this.showModalBuy = true;
+    setTimeout(() => {
+      this.showModalBuy = false;
+    }, 2000);
   }
 
 }

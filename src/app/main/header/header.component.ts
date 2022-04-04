@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   toggle: boolean = false;
   isLogged: boolean = false;
+  userName: string = '';
 
   constructor(
     private route:Router
@@ -16,12 +17,14 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.logged();
+    this.userName = localStorage.getItem("name")
   }
 
   logout(): void {
     localStorage.clear();
     this.logged();
-    this.route.navigateByUrl('/main/home')
+    this.route.navigateByUrl('/main/home');
+    this.userName = '';
   }
 
   private logged(): void {
