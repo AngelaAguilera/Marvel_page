@@ -29,21 +29,66 @@
   <h2>SHIPPING INFORMATION</h2>
   <form class="card-content-shipping" [formGroup]="shippingForm" (submit)="addAddress()">
     <div class="form-inline">
-      <input type="text" placeholder="Name" formControlName="name" />
-      <input type="text" placeholder="City" formControlName="city" />
-      <input type="text" placeholder="State" formControlName="state" />
+      <div class="margin">
+        <input type="text" placeholder="Name" formControlName="name" />
+          <div class="errors" *ngIf="shippingFormControl('name').invalid">
+            <div *ngIf="oneShippingFormControl('name', 'required')
+            || oneShippingFormControl('name', 'minlength')">
+                Field required (Minimum 5 characters)
+            </div>
+            <div *ngIf="oneShippingFormControl('name', 'pattern')">
+              Only alphabetic characters.
+            </div>
+          </div>
+      </div>
+      <div class="margin">
+        <input type="text" placeholder="City" formControlName="city" />
+        <div class="errors" *ngIf="shippingFormControl('city').invalid">
+          <div *ngIf="oneShippingFormControl('city', 'required')
+          || oneShippingFormControl('city', 'minlength')">
+              Field required (Minimum 2 characters)
+          </div>
+        </div>
+      </div>
+      <div>
+        <input type="text" placeholder="State" formControlName="state" />
+        <div class="errors" *ngIf="shippingFormControl('state').invalid">
+          <div *ngIf="oneShippingFormControl('state', 'required')
+          || oneShippingFormControl('state', 'minlength')">
+              Field required (Minimum 2 characters)
+          </div>
+        </div>
+      </div>
     </div>
     <div class="form-inline">
-      <input type="text" placeholder="Address" formControlName="address" />
-      <input
+      <div class="margin">
+        <input type="text" placeholder="Address" formControlName="address" />
+        <div class="errors" *ngIf="shippingFormControl('address').invalid">
+          <div *ngIf="oneShippingFormControl('address', 'required')
+          || oneShippingFormControl('address', 'minlength')">
+              Field required (Minimum 5 characters)
+          </div>
+        </div>
+      </div>
+      <div class="margin">
+        <input
         type="text"
         placeholder="ZipCode"
         (keypress)="($event.charCode >= 48 && $event.charCode <= 57)"
         maxlength="10"
         minlength="8"
         formControlName="zipcode"
-      />
-      <input type="text" placeholder="Details" formControlName="details" />
+        />
+        <div class="errors" *ngIf="shippingFormControl('zipcode').invalid">
+          <div *ngIf="oneShippingFormControl('zipcode', 'required')
+          || oneShippingFormControl('zipcode', 'minlength')">
+              Field required (Min 8, Max 10 characters)
+          </div>
+        </div>
+      </div>
+      <div>
+        <input type="text" placeholder="Details" formControlName="details" />
+      </div>
     </div>
     <button class="btn-black" type="submit">Add Address</button>
   </form>

@@ -1,7 +1,7 @@
 import { CartProducts } from './../../models/cartProducts';
 import { CartService } from './../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-cart',
@@ -20,7 +20,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.shippingForm = this.fb.group({
-      name: ['', [Validators.required,Validators.minLength(10)]],
+      name: ['', [Validators.pattern(/^[A-Za-z ]+$/),Validators.required,Validators.minLength(5)]],
       city: ['', [Validators.required,Validators.minLength(2)]],
       state: ['', [Validators.required,Validators.minLength(2)]],
       address: ['', [Validators.required,Validators.minLength(5)]],
@@ -45,6 +45,15 @@ export class CartComponent implements OnInit {
     } else {
       alert('Please enter the information required');
     }
+  }
+
+  //Validadores de errores
+  shippingFormControl(shippingtControl): FormControl {
+    return this.shippingForm.controls[shippingtControl] as FormControl;
+  }
+
+  oneShippingFormControl(shippingtControl, error) {
+    return this.shippingForm.get(shippingtControl).hasError(error);
   }
 
 }

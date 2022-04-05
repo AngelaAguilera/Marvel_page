@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../services/users.service';
 import { User } from 'src/app/models/user';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -22,8 +22,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      user: ['', Validators.required],
-      password: ['', Validators.required]
+      user: ['', [Validators.required, Validators.minLength(2)]],
+      password: ['', [Validators.required, Validators.minLength(8)]]
     });
   }
 
@@ -49,6 +49,15 @@ export class LoginComponent implements OnInit {
     } else {
       alert('Enter credentials to sign in');
     }
+  }
+
+  //Validadores de errores
+  loginFormControl(loginControl): FormControl {
+    return this.loginForm.controls[loginControl] as FormControl;
+  }
+
+  oneLoginFormControl(loginControl, error) {
+    return this.loginForm.get(loginControl).hasError(error);
   }
 
 }

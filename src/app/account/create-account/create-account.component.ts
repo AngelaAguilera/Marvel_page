@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../services/users.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { OnExit } from 'src/app/guards/go-out-page.guard';
@@ -26,8 +26,8 @@ export class CreateAccountComponent implements OnInit, OnExit {
       firstName: ['', [Validators.required, Validators.pattern(/^[A-Za-z ]+$/), Validators.minLength(2)]],
       lastName: ['', [Validators.required, Validators.pattern(/^[A-Za-z ]+$/), Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
-      user: ['', Validators.required],
-      password: ['', Validators.required],
+      user: ['', [Validators.required, Validators.minLength(2)]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
       type: ['user']
     })
   }
@@ -55,6 +55,15 @@ export class CreateAccountComponent implements OnInit, OnExit {
     } else {
       alert('Please enter the information required');
     }
+  }
+
+  //Validadores de errores
+  accountFormControl(accountControl): FormControl {
+    return this.accountForm.controls[accountControl] as FormControl;
+  }
+
+  oneAccountFormControl(accountControl, error) {
+    return this.accountForm.get(accountControl).hasError(error);
   }
 
   //pregunta al usuario si quiere salir

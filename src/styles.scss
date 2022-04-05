@@ -168,6 +168,11 @@ input, select {
   border-bottom: 2px solid red;
   outline: none;
 }
+.errors {
+  color: red;
+  padding-left: 10px;
+  font-size: smaller;
+}
 
 .form-inline {
   display: inline-flex;

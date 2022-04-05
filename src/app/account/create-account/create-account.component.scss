@@ -10,16 +10,21 @@
     flex-flow: column;
     text-align: left;
     justify-content: center;
+}
 
+input {
+    width: 100%;
+    margin: 8px 0px;
+}
+
+.margin input {
+    margin-right: 20px;
+}
+
+.form-inline {
+    width: 100%;
     input {
-        font-family: 'Montserrat';
-        font-size: medium;
-        height: 30px;
-        width: 100%;
-        margin: 8px 5px;
-        border: 0;
-        border-bottom: 2px solid red;
-        outline: none;
+        width: 250px;
     }
 }
 
@@ -28,10 +33,6 @@ a {
     text-align: center;
 }
 
-.form-inline {
-    display: inline-flex;
-    text-align: justify;
-}
 label {
     text-align: left;
     min-width: 100%;
