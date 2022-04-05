@@ -1,15 +1,50 @@
 <div class="text-white">
-    <h1>
-        MI SHOPING CART
-    </h1>
-    <hr>
-    <div class="card product" *ngFor="let product of products">
-        <img src="{{product.image}}" alt="">
-      <div class="details">
-        <p><b>{{product.name}}</b></p>
-        <p><b>Quantity:</b> {{product.quantity}}</p>
-        <p><b>Price:</b> {{product.price | currency}}</p>
-      </div>
-    </div>
+  <h1>MY SHOPPING CART</h1>
+  <hr />
 </div>
-<hr>
+<div class="card prod">
+  <h2>YOUR PRODUCTS</h2>
+  <div *ngFor="let product of products">
+    <div class="content">
+      <img src="{{ product.image }}" alt="" />
+      <span>
+        <b>{{ product.name }}</b>
+      </span>
+      <span><b>Quantity:</b> {{ product.quantity }}</span>
+      <span><b>Price:</b> {{ product.price | currency }}</span>
+      <button class="btn-red">
+        <span class="material-icons">delete</span>
+      </button>
+    </div>
+    <hr class="hr-black" />
+  </div>
+  <hr class="hr-black" />
+  <div class="form-inline">
+    <h2>SUBTOTAL ( {{ products.length }} products ) : {{total | currency}}</h2>
+    <button class="btn-buy">BUY NOW</button>
+  </div>
+</div>
+<hr />
+<div class="card card-shipping">
+  <h2>SHIPPING INFORMATION</h2>
+  <form class="card-content-shipping" [formGroup]="shippingForm" (submit)="addAddress()">
+    <div class="form-inline">
+      <input type="text" placeholder="Name" formControlName="name" />
+      <input type="text" placeholder="City" formControlName="city" />
+      <input type="text" placeholder="State" formControlName="state" />
+    </div>
+    <div class="form-inline">
+      <input type="text" placeholder="Address" formControlName="address" />
+      <input
+        type="text"
+        placeholder="ZipCode"
+        (keypress)="($event.charCode >= 48 && $event.charCode <= 57)"
+        maxlength="10"
+        minlength="8"
+        formControlName="zipcode"
+      />
+      <input type="text" placeholder="Details" formControlName="details" />
+    </div>
+    <button class="btn-black" type="submit">Add Address</button>
+  </form>
+</div>

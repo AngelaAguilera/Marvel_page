@@ -76,11 +76,12 @@ button {
 }
 
 .btn-buy {
-  background-color: yellow;
+  background-color: rgb(246, 246, 0);
   height: 40px;
   border-radius: 5px;
   margin: 10px;
   font-size: medium;
+  border-color: transparent;
 }
 
 .btn-black {
@@ -88,12 +89,31 @@ button {
   color: white;
   height: 40px;
   border-radius: 5px;
+  border-color: transparent;
+  margin: 10px;
+  font-size: medium;
+}
+
+.btn-red {
+  background-color: red;
+  color: white;
+  height: 40px;
+  border-radius: 5px;
+  border-color: transparent;
   margin: 10px;
   font-size: medium;
 }
 
 .btn-black:hover {
   background-color: #333333;
+}
+
+.btn-buy:hover {
+  background-color: rgba(208, 208, 0, 0.975);
+}
+
+.btn-red:hover {
+  background-color: rgb(162, 0, 0);
 }
 
 .container {

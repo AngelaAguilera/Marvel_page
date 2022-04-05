@@ -13,13 +13,88 @@
   height: 15vh;
   align-items: center;
 }
+.prod {
+  display: inline-block;
+  width: 100%;
+}
+.content {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  img {
+    width: 70px;
+  }
+  span {
+    padding: 10px;
+    align-self: center;
+    width: 100%;
+    .title {
+      text-align:left;
+    }
+  }
+}
+.hr-black {
+  background-color: black;
+  height: 2px;
+  margin: 5px 0;
+}
+
+.btn-red {
+  height: auto;
+  margin: 0;
+  align-self: right;
+}
+
+.card-shipping {
+  display: block;
+  height: max-content;
+  flex-flow: column;
+  margin: auto;
+  justify-content: center;
+}
+
+.card-content-shipping {
+  display: flex;
+  flex-flow: column;
+  text-align: left;
+  justify-content: center;
+
+  input {
+      font-family: 'Montserrat';
+      font-size: medium;
+      height: 30px;
+      width: 100%;
+      margin: 8px 5px;
+      border: 0;
+      border-bottom: 2px solid red;
+      outline: none;
+  }
+}
+
+.form-inline {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-buy {
+  padding: 5px;
+}
+
+.btn-black {
+  max-width: fit-content;
+  align-self: center;
+  padding: 5px;
+}
 
 .product img {
   max-width: 100px;
   height: 100%;
 }
 
-@media only screen and (max-width: 490px) {
+@media only screen and (max-width: 650px) {
   .product {
     height: max-content;
     justify-content: center;
@@ -29,5 +104,21 @@
     flex-direction: column;
     min-width: max-content;
     justify-content: space-evenly;
+  }
+  .prod {
+    height: max-content;
+  }
+  .content{
+    flex-direction: column;
+    button {
+      align-self: right;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .form-inline {
+    flex-direction: column;
+    min-width: max-content;
   }
 }
