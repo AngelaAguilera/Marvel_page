@@ -68,6 +68,7 @@ input {
 }
 
 .form-inline {
+  justify-content: space-between;
   width: 100%;
   div {
     width: 100%;
@@ -79,10 +80,6 @@ input {
 }
 
 .btn-buy {
-  padding: 5px;
-}
-
-.btn-black {
   max-width: fit-content;
   align-self: center;
   padding: 5px;

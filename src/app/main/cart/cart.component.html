@@ -21,13 +21,12 @@
   <hr class="hr-black" />
   <div class="form-inline">
     <h2>SUBTOTAL ( {{ products.length }} products ) : {{total | currency}}</h2>
-    <button class="btn-buy">BUY NOW</button>
   </div>
 </div>
 <hr />
 <div class="card card-shipping">
   <h2>SHIPPING INFORMATION</h2>
-  <form class="card-content-shipping" [formGroup]="shippingForm" (submit)="addAddress()">
+  <form class="card-content-shipping" [formGroup]="shippingForm" (submit)="buyNow()">
     <div class="form-inline">
       <div class="margin">
         <input type="text" placeholder="Name" formControlName="name" />
@@ -90,6 +89,9 @@
         <input type="text" placeholder="Details" formControlName="details" />
       </div>
     </div>
-    <button class="btn-black" type="submit">Add Address</button>
+    <div style="text-align: right;">
+      <button class="btn-buy" type="submit">BUY NOW</button>
+    </div>
+    
   </form>
 </div>

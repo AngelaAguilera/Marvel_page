@@ -22,19 +22,23 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      user: ['', [Validators.required, Validators.minLength(2)]],
-      password: ['', [Validators.required, Validators.minLength(8)]]
+      user: ['', [Validators.required]],
+      password: ['', [Validators.required]]
     });
   }
 
   public getUser(): void {
     const user = this.loginForm.value;
+    debugger;
     if(this.loginForm.valid){
       this.userService.getUser(user).subscribe((res) => {
         this.usersLogin = res;
         if(this.usersLogin.length > 0 ){
           //crear almacenamiento en localStorage
           localStorage.removeItem('type');
+          localStorage.removeItem('name');
+          localStorage.removeItem('userId');
+          localStorage.removeItem('email');
           localStorage.setItem('type', this.usersLogin[0].type);
           localStorage.setItem('name', (this.usersLogin[0].firstName).toString());
           localStorage.setItem('userId', (this.usersLogin[0].id).toString());

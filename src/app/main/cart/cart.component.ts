@@ -39,7 +39,8 @@ export class CartComponent implements OnInit {
     
   }
 
-  public addAddress() {
+  public buyNow() {
+    //AGREGAR EL ENVIO DE CORREO
     if(this.shippingForm.valid) {
       alert('The shipping information has been saved');
     } else {

@@ -7,17 +7,7 @@
   <h3>FILTERS</h3>
   <form [formGroup]="funkosForm" (submit)="getFunkosFilter()">
     <div class="form-inline">
-      <label for="options" class="float-left">Year</label>
-      <input
-        type="text"
-        class="float-right"
-        (keypress)="($event.charCode >= 48 && $event.charCode <= 57)"
-        maxLength="4"
-        formControlName="year"
-      />
-    </div>
-    <div class="form-inline">
-      <label for="name">name</label>
+      <label for="name">Name</label>
       <input type="text" name="name" formControlName="name" />
     </div>
     <button class="btn-black" type="submit">
