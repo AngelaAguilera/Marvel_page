@@ -16,7 +16,15 @@
   </form>
 </div>
 <br /><br />
-<div class="funkos-list">
-  <app-funko-card *ngFor="let funko of funkos" [funko]="funko">
-  </app-funko-card>
+<div class="loading-yellow" *ngIf="load">
+  LOADING . . .
 </div>
+<ng-container *ngIf="!load">
+  <div class="funkos-list" *ngIf="funkos.length && !load">
+    <app-funko-card *ngFor="let funko of funkos" [funko]="funko">
+    </app-funko-card>
+  </div>
+  <div class="loading-yellow" *ngIf="!funkos.length">
+    Sorry, we cannot find a match, please try again.
+  </div>
+</ng-container>

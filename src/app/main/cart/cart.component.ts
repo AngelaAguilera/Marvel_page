@@ -10,6 +10,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class CartComponent implements OnInit {
   products: CartProducts[] = [];
+  load: boolean = true;
   shippingForm: FormGroup;
   total: number;
 
@@ -35,6 +36,7 @@ export class CartComponent implements OnInit {
     this.cartService.getProducts(userId).subscribe(response => {
       this.products = response;
       this.total = this.products.reduce((sum,prod,) => sum + (prod.price), 0);
+      this.load = false;
     });
     
   }

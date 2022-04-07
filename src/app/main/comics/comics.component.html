@@ -3,7 +3,7 @@
   <span> Find your favorite Marvel comics here! </span>
 </div>
 <hr />
-<div class="card">
+<div class="card" >
   <h3>FILTERS</h3>
   <form [formGroup]="comicsForm" (submit)="getComicsFilter()">
     <div class="form-inline">
@@ -35,8 +35,16 @@
   </form>
 </div>
 <br /><br />
-<div class="comics-list">
-  <app-card *ngFor="let comic of comics" [comic]="comic">
-    <a href=""><h1>name</h1></a>
-  </app-card>
+<div class="loading-yellow" *ngIf="load">
+  LOADING . . .
 </div>
+<ng-container *ngIf="!load">
+  <div class="comics-list" *ngIf="comics.length && !load">
+    <app-card *ngFor="let comic of comics" [comic]="comic">
+      <a href=""><h1>name</h1></a>
+    </app-card>
+  </div>
+  <div class="loading-yellow" *ngIf="!comics.length">
+    Sorry, we cannot find a match, please try again.
+  </div>
+</ng-container>

@@ -10,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FunkosComponent implements OnInit {
 
-  funkos: Funko[];
+  funkos: Funko[] = [];
+  load: boolean = true;
   funkosForm: FormGroup;
 
   constructor(
@@ -24,7 +25,7 @@ export class FunkosComponent implements OnInit {
       year: ['2022']
     });
     //this.getComics();
-    this.getFunkos();
+    this.getFunkosFilter();
   }
 
   public getFunkos(): void {
@@ -34,6 +35,7 @@ export class FunkosComponent implements OnInit {
   public getFunkosFilter(): void {
     this.funkosService.getFunkosFilters(this.funkosForm.value.name, this.funkosForm.value.year).subscribe((result) => {
       this.funkos = result;
+      this.load = false;
     });
   }
 }

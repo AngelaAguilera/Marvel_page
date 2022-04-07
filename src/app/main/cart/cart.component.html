@@ -2,9 +2,16 @@
   <h1>MY SHOPPING CART</h1>
   <hr />
 </div>
-<div class="card prod">
+<div class="loading-yellow" *ngIf="load">
+  LOADING . . .
+</div>
+<ng-container *ngIf="!load">
+  <div class="card prod" *ngIf="!products.length">
+    <h2>YOUR MARVEL CART IS EMPTY :(</h2>
+  </div>
+<div class="card prod" *ngIf="products.length">
   <h2>YOUR PRODUCTS</h2>
-  <div *ngFor="let product of products">
+  <div *ngFor="let product of products" >
     <div class="content">
       <img src="{{ product.image }}" alt="" />
       <span>
@@ -23,8 +30,9 @@
     <h2>SUBTOTAL ( {{ products.length }} products ) : {{total | currency}}</h2>
   </div>
 </div>
+</ng-container>
 <hr />
-<div class="card card-shipping">
+<div class="card card-shipping" *ngIf="products.length">
   <h2>SHIPPING INFORMATION</h2>
   <form class="card-content-shipping" [formGroup]="shippingForm" (submit)="buyNow()">
     <div class="form-inline">

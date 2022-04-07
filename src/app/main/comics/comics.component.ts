@@ -9,7 +9,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./comics.component.scss']
 })
 export class ComicsComponent implements OnInit {
-  comics: Comic[];
+  comics: Comic[] = [];
+  load: boolean = true;
   comicsForm: FormGroup;
   dateRanges = [
     { id: "lastWeek", name: "Last week" },
@@ -39,9 +40,9 @@ export class ComicsComponent implements OnInit {
 
   public getComicsFilter(): void {
     console.log(this.comicsForm.value);
-    
     this.comicService.getComicsFilters(this.comicsForm.value.dateRange, this.comicsForm.value.title, this.comicsForm.value.year).subscribe((result) => {
       this.comics = result.data.results;
+      this.load = false;
       console.log(this.comics);
     });
   }

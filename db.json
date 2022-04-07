@@ -90,46 +90,6 @@
       "price": 20
     },
     {
-      "id": "1649113973179",
-      "userId": 1,
-      "productId": 92834,
-      "image": "http://i.annihil.us/u/prod/marvel/i/mg/8/a0/622a2a3fdb363.jpg",
-      "price": 3.99,
-      "quantity": 1,
-      "type": "funko",
-      "name": "She-Hulk (2022) #5"
-    },
-    {
-      "id": "1649114209787",
-      "userId": 1,
-      "productId": 99551,
-      "image": "http://i.annihil.us/u/prod/marvel/i/mg/4/f0/622a290c0b20a.jpg",
-      "price": 4.99,
-      "quantity": 1,
-      "type": "funko",
-      "name": "Moon Knight: Black, White & Blood (2022) #2"
-    },
-    {
-      "id": "1649115192437",
-      "userId": 1,
-      "productId": 92834,
-      "image": "http://i.annihil.us/u/prod/marvel/i/mg/8/a0/622a2a3fdb363.jpg",
-      "price": 3.99,
-      "quantity": 1,
-      "type": "funko",
-      "name": "She-Hulk (2022) #5"
-    },
-    {
-      "id": "1649270222335",
-      "userId": 1,
-      "productId": 97119,
-      "image": "http://i.annihil.us/u/prod/marvel/i/mg/5/f0/622a28d9d33b0.jpg",
-      "price": 3.99,
-      "quantity": 1,
-      "type": "funko",
-      "name": "Iron Fist (2022) #4"
-    },
-    {
       "id": "1649270235039",
       "userId": 0,
       "productId": 98427,
