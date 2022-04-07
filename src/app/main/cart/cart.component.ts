@@ -1,7 +1,9 @@
+import { createMailBuy } from 'src/app/lib/createMail';
 import { CartProducts } from './../../models/cartProducts';
 import { CartService } from './../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { EmailService } from 'src/app/services/email.service';
 
 @Component({
   selector: 'app-cart',
@@ -16,7 +18,8 @@ export class CartComponent implements OnInit {
 
   constructor(
     private cartService: CartService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private emailService: EmailService
   ) { }
 
   ngOnInit(): void {
@@ -38,12 +41,16 @@ export class CartComponent implements OnInit {
       this.total = this.products.reduce((sum,prod,) => sum + (prod.price), 0);
       this.load = false;
     });
-    
+
   }
 
   public buyNow() {
     //AGREGAR EL ENVIO DE CORREO
     if(this.shippingForm.valid) {
+      const emailClient = createMailBuy();
+      this.emailService.sendEmail(
+        emailClient
+      ).subscribe(res => { console.log(res) });
       alert('The shipping information has been saved');
     } else {
       alert('Please enter the information required');

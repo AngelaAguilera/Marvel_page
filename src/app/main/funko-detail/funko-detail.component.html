@@ -39,22 +39,24 @@
         </div>
       </div>
       </div>
-      <button class="btn-black" (click)="addToCart()" [disabled]="false">
-        <span class="material-icons" >
-          shopping_cart
-        </span>
-      </button>
-      <button class="btn-buy" (click)="buy()">
-        Buy now
-      </button>
+      <ng-container *ngIf="isLogged; else redirect">
+        <button class="btn-black" (click)="addToCart()">
+          <span class="material-icons" >
+            shopping_cart
+          </span>
+        </button>
+      </ng-container>
+      <ng-template #redirect>
+        <button class="btn-black" routerLink="/login" >
+          <span class="material-icons" >
+            shopping_cart
+          </span>
+        </button>
+      </ng-template>
     </div>
   </div>
 </div>
 
 <div class="card modal" [ngClass]="showModal? 'modal-show':''">
   <p>Product added to your cart</p>
-</div>
-
-<div class="card modal" [ngClass]="showModalBuy? 'modal-show':''">
-  <p>Thanks for your purchase</p>
 </div>
