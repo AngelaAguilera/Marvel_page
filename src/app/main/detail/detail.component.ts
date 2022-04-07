@@ -19,6 +19,7 @@ export class DetailComponent implements OnInit {
   quantity: number = 1;
   showModal = false;
   showModalBuy = false;
+  isLogged: boolean = false;
 
   constructor(
     private cartService: CartService,
@@ -28,6 +29,7 @@ export class DetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.isLogged = localStorage.length > 0;
     this.getComic();
   }
 
@@ -80,17 +82,4 @@ export class DetailComponent implements OnInit {
       ++this.quantity;
     }
   }
-
-  public buy() {
-    const emailClient = createMailAddToCart({
-      name: this.comicDetail.title,
-      image: this.comicDetail.thumbnail.path + "." + this.comicDetail.thumbnail.extension
-    });
-    this.emailService.sendEmail(emailClient).subscribe(res => { });
-    this.showModalBuy = true;
-    setTimeout(() => {
-      this.showModalBuy = false;
-    }, 2000);
-  }
-
 }

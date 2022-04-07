@@ -18,6 +18,7 @@ export class FunkoDetailComponent implements OnInit {
   quantity: number = 1;
   showModal = false;
   showModalBuy = false;
+  isLogged: boolean = false;
 
   constructor(
     private comicsService: FunkosService,
@@ -27,6 +28,7 @@ export class FunkoDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.isLogged = localStorage.length > 0;
     this.getFunko();
   }
 
@@ -72,14 +74,5 @@ export class FunkoDetailComponent implements OnInit {
     if (this.quantity < 10) {
       ++this.quantity;
     }
-  }
-
-  public buy() {
-    const emailClient = createMailBuy({ name: this.funkoDetail.name, image: this.funkoDetail.image });
-    this.emailService.sendEmail(emailClient).subscribe(res => {});
-    this.showModalBuy = true;
-    setTimeout(() => {
-      this.showModalBuy = false;
-    }, 2000);
   }
 }

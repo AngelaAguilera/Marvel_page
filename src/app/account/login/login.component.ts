@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
 
   public getUser(): void {
     const user = this.loginForm.value;
-    debugger;
     if(this.loginForm.valid){
       this.userService.getUser(user).subscribe((res) => {
         this.usersLogin = res;
