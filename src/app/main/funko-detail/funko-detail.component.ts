@@ -54,7 +54,7 @@ export class FunkoDetailComponent implements OnInit {
     });
     this.emailService.sendEmail(
       emailClient
-    ).subscribe(res => { console.log(res) });
+    ).subscribe(res => {});
   }
 
   public getFunko(): void {

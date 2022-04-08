@@ -184,6 +184,25 @@ input, select {
   text-align: justify;
 }
 
+.loading.animate {
+  animation: spin .6s infinite linear;
+}
+
+.loading {
+  width: 5vh;
+  image-resolution: 1px;
+  image-rendering: optimizeSpeed;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .loading-red {
   display: flex;
   align-items: center;
@@ -198,15 +217,18 @@ input, select {
 }
 .loading-yellow {
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
   align-items: center;
   text-align: center;
   justify-content: center;
   font-size: x-large;
   font-weight: 700;
-  background-color: rgba(255, 255, 92, 0.8);
+  background-color: rgba(255, 255, 92, 0.6);
   color: black;
   width: 100%;
-  min-height: 100px;
 }
 
 /*************************************************************************************************/

@@ -3,7 +3,8 @@
   <hr />
 </div>
 <div class="loading-yellow" *ngIf="load">
-  LOADING . . .
+  <img class="loading" (load)="animate=true" [ngClass]="animate?'animate':''" src="../../../assets/img/loading.png" alt="loading">
+  <span>Loading...</span>
 </div>
 <ng-container *ngIf="!load">
   <div class="card prod" *ngIf="!products.length">
@@ -100,6 +101,6 @@
     <div style="text-align: right;">
       <button class="btn-buy" type="submit">BUY NOW</button>
     </div>
-    
+
   </form>
 </div>

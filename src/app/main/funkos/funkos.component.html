@@ -17,7 +17,8 @@
 </div>
 <br /><br />
 <div class="loading-yellow" *ngIf="load">
-  LOADING . . .
+  <img class="loading" (load)="animate=true" [ngClass]="animate?'animate':''" src="../../../assets/img/loading.png" alt="loading">
+  <span>Loading...</span>
 </div>
 <ng-container *ngIf="!load">
   <div class="funkos-list" *ngIf="funkos.length && !load">

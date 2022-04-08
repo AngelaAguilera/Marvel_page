@@ -42,7 +42,7 @@ export class DetailComponent implements OnInit {
 
     this.emailService.sendEmail(
       emailClient
-    ).subscribe(res => { console.log(res) });
+    ).subscribe(res => { });
 
     const product: CartProducts = {
       id: Date.now() + "",
@@ -66,8 +66,6 @@ export class DetailComponent implements OnInit {
     const id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
     this.comicsService.getComic(id).subscribe(response => {
       this.comicDetail = response.data.results[0];
-      console.log(response.data.results);
-
     });
   }
 

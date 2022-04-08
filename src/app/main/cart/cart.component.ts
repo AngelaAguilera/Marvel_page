@@ -15,6 +15,7 @@ export class CartComponent implements OnInit {
   load: boolean = true;
   shippingForm: FormGroup;
   total: number;
+  animate: boolean = false;
 
   constructor(
     private cartService: CartService,
@@ -40,6 +41,7 @@ export class CartComponent implements OnInit {
       this.products = response;
       this.total = this.products.reduce((sum,prod,) => sum + (prod.price), 0);
       this.load = false;
+      this.animate = false;
     });
   }
 
@@ -54,7 +56,7 @@ export class CartComponent implements OnInit {
       const emailClient = createMailBuy();
       this.emailService.sendEmail(
         emailClient
-      ).subscribe(res => { console.log(res) });
+      ).subscribe(res => { });
       alert('The shipping information has been saved');
     } else {
       alert('Please enter the information required');

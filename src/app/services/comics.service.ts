@@ -25,13 +25,11 @@ export class ComicsService {
     return this.http.get<Data>(this.urlApiComics+'&startYear=2021'+this.urlCredentials);
   }
   getComicsFilters(date: string, title: string, year: string): Observable<Data>{
-    
+
     date == '' ? date = '' : date = '&dateDescriptor='+date;
     title == '' ? title = '' : title = '&titleStartsWith='+title;
     year == '' ? year = '' : year = '&startYear='+year;
     this.urlFilters = date+title+year;
-    console.log(this.urlFilters);
-    
     return this.http.get<Data>(this.urlApiComics+this.urlFilters+this.urlCredentials);
   }
 }

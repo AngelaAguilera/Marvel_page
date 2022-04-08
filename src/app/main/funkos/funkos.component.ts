@@ -13,6 +13,7 @@ export class FunkosComponent implements OnInit {
   funkos: Funko[] = [];
   load: boolean = true;
   funkosForm: FormGroup;
+  animate: boolean = false;
 
   constructor(
     private funkosService: FunkosService,
@@ -36,6 +37,7 @@ export class FunkosComponent implements OnInit {
     this.funkosService.getFunkosFilters(this.funkosForm.value.name, this.funkosForm.value.year).subscribe((result) => {
       this.funkos = result;
       this.load = false;
+      this.animate = false;
     });
   }
 }

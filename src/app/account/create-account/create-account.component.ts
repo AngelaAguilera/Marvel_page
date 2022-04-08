@@ -45,7 +45,6 @@ export class CreateAccountComponent implements OnInit, OnExit {
               alert('This username is already in use');
             } else {
               this.userService.postUser(user).subscribe(res =>{
-              console.log(res);
               this.router.navigate(['/main/cart']);
               });
             }
