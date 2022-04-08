@@ -98,6 +98,36 @@
       "quantity": 1,
       "type": "funko",
       "name": "Legion of X (2022) #2"
+    },
+    {
+      "id": "1649431880387",
+      "userId": 1,
+      "productId": 100608,
+      "image": "http://i.annihil.us/u/prod/marvel/i/mg/9/10/623b34b8ae53d.jpg",
+      "price": 5.99,
+      "quantity": 1,
+      "type": "funko",
+      "name": "Immortal X-Men (2022) #1 (Variant)"
+    },
+    {
+      "id": "1649431936462",
+      "userId": 1,
+      "productId": 98310,
+      "image": "http://i.annihil.us/u/prod/marvel/i/mg/9/60/62432e629bdce.jpg",
+      "price": 3.99,
+      "quantity": 1,
+      "type": "funko",
+      "name": "Spider-Punk (2022) #1"
+    },
+    {
+      "id": "1649432031729",
+      "userId": 1,
+      "productId": 7,
+      "image": "https://http2.mlstatic.com/D_NQ_NP_814258-MLC45331160382_032021-V.webp",
+      "price": 29,
+      "quantity": 1,
+      "type": "funko",
+      "name": "groot"
     }
   ]
 }

@@ -46,8 +46,10 @@ export class CartComponent implements OnInit {
   }
 
   deleteProduct(productId) {
-    this.cartService.deleteProduct(productId).subscribe();
-    this.getProducts();this.getProducts();
+    this.cartService.deleteProduct(productId).subscribe(res =>
+      {
+        this.getProducts();
+      });
   }
 
   public buyNow() {
