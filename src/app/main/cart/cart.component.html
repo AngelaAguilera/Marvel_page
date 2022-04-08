@@ -19,7 +19,7 @@
       </span>
       <span><b>Quantity:</b> {{ product.quantity }}</span>
       <span><b>Price:</b> {{ product.price | currency }}</span>
-      <button class="btn-red">
+      <button class="btn-red" (click)="deleteProduct(product.id)">
         <span class="material-icons">delete</span>
       </button>
     </div>

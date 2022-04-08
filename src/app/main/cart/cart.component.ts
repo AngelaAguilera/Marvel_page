@@ -41,7 +41,11 @@ export class CartComponent implements OnInit {
       this.total = this.products.reduce((sum,prod,) => sum + (prod.price), 0);
       this.load = false;
     });
+  }
 
+  deleteProduct(productId) {
+    this.cartService.deleteProduct(productId).subscribe();
+    this.getProducts();this.getProducts();
   }
 
   public buyNow() {

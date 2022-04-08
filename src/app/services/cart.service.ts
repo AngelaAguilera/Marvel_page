@@ -21,4 +21,8 @@ export class CartService {
     const products = this.http.get<CartProducts[]>(`http://localhost:3000/cart?userId=${userId}`);
     return products;
   }
+
+  deleteProduct(productId: string):Observable<CartProducts> {
+    return this.http.delete<CartProducts>(`http://localhost:3000/cart/${productId}`);
+  }
 }

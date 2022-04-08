@@ -14,6 +14,7 @@
     display: flex;
     img {
         max-width: 450px;
+        box-shadow: 8px 8px 10px 8px #999;
     }
 }
 .card-home-content {
@@ -30,15 +31,14 @@
 }
 .btn-home {
     max-width: 250px;
+    margin: 0%;
+    padding: 5px;
 }
+
 .card-home-bottom {
     text-align: end;
 }
 
-.btn-home {
-  font-size: 15px;
-  padding: 5px;
-}
 .btn-black {
   height: auto;
 }

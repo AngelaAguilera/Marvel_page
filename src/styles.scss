@@ -92,6 +92,11 @@ button {
   border-color: transparent;
   margin: 10px;
   font-size: medium;
+  transition: all .2s ease-in-out;
+}
+.btn-black:hover {
+  transform: scale(1.05);
+  box-shadow: 3px 3px 3px 3px #999;
 }
 
 .btn-red {
@@ -207,6 +212,11 @@ input, select {
 /*************************************************************************************************/
 /*start CARD FLIP*/
 .card-comic {
+  height: 100%;
+  flex-direction: column;
+  justify-content:space-between;
+}
+.card-funko {
   height: 100%;
   flex-direction: column;
   justify-content:space-between;
